@@ -6,5 +6,5 @@ RUN apt-get install -y python3 python3-pip
 
 RUN pip3 install jupyterlab
 
-CMD ["/bin/bash", "which", "python3"]
+CMD jupyter lab --ip=0.0.0.0 --no-browser --allow-root
 
