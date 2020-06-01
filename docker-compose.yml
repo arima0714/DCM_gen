@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+        container_01:
+                build:
+                        context: .
+                        dockerfile: Dockerfile
+
