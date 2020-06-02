@@ -13,3 +13,7 @@ def index():
 def testx():
     return make_response(jsonify({"ruigigo":"ruigigo"}))
 
+@app.route("/input/<input_string>")
+def return_input_string(input_string):
+    return make_response(jsonify({"input_string":input_string}))
+
