@@ -6,15 +6,11 @@ from cashman.model.transaction_type import TransactionType
 
 app = Flask(__name__)
 
-transaction = [
+transactions = [
         Income('Salary', 5000),
         Income('Dividends', 200),
         Expense('pizza', 50),
         Expense('Rock Concert', 100)
-]
-
-incomes = [
-        {'description': 'salary', 'amount':5000}
 ]
 
 @app.route('/incomes')
@@ -38,6 +34,14 @@ def get_expenses():
     expenses = schema.dump(
             filter(lambda t: t.type == TransactionType.EXPENSE, transactions)
     )
-
     return jsonify(expenses.data)
+
+@app.route('/expenses', methods=['POST'])
+def add_expense():
+    expense = ExpenseSchema().load(request.get_json())
+    transactions.append(expense.data)
+    return "", 204
+
+if __name__ == "__main__":
+    app.run()
 
