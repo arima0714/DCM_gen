@@ -8,7 +8,6 @@ RUN pip3 install Flask
 RUN pip3 install gensim
 
 WORKDIR /var/volume
-ENV FLASK_APP /var/volume/index.py
 
-CMD flask run --host 0.0.0.0 --port 5000
+CMD FLASK_APP=/var/volume/index.py FLASK_DEBUG=1 flask run --host 0.0.0.0 --port 5000
 
