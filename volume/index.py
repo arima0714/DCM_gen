@@ -23,4 +23,3 @@ def return_most_somilar(input_string):
     result = model.wv.most_similar(input_string)
     return_data = jsonify({"1":result[0][0], "2":result[1][0], "3":result[2][0]})
     return make_response(return_data)
-
