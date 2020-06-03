@@ -4,8 +4,16 @@ services:
         container_01:
                 build:
                         context: .
-                        dockerfile: Dockerfile
+                        dockerfile: Dockerfile-1
                 ports:
                  - "8888:8888"
+                volumes:
+                 - ./volume:/var/volume
+        container_02:
+                build:
+                        context: .
+                        dockerfile: Dockerfile-2
+                ports:
+                 - "5000:5000"
                 volumes:
                  - ./volume:/var/volume
