@@ -4,10 +4,8 @@ RUN sed -i 's@archive.ubuntu.com@ftp.jaist.ac.jp/pub/Linux@g' /etc/apt/sources.l
 RUN apt-get update
 RUN apt-get install -y python3 python3-pip
 
-RUN pip3 install Flask
-RUN pip3 install gensim
+RUN pip3 install streamlit gensim
 
 WORKDIR /var/volume
 
-CMD FLASK_APP=/var/volume/index.py FLASK_DEBUG=1 flask run --host 0.0.0.0 --port 5000
-
+CMD STREAMLIT_SERVER_PORT=0808 streamlit run index.py
