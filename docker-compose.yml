@@ -17,12 +17,4 @@ services:
                  - "5000:5000"
                 volumes:
                  - ./volume:/var/volume
-        container_03:
-                build:
-                        context: .
-                        dockerfile: Dockerfile-3
-                ports:
-                 - "3000:3000"
-                volumes:
-                 - ./volume:/home/project
 
