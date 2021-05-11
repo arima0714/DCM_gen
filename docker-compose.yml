@@ -14,7 +14,7 @@ services:
                         context: .
                         dockerfile: Dockerfile-2
                 ports:
-                 - "5000:5000"
+                 - "0808:0808"
                 volumes:
                  - ./volume:/var/volume
 
