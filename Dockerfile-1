@@ -12,5 +12,5 @@ RUN pip3 install pandas
 
 WORKDIR /var/volume
 
-CMD jupyter lab --ip=0.0.0.0 --no-browser --allow-root
+CMD jupyter lab --ip=0.0.0.0 --no-browser --allow-root --NotebookApp.token=''
 
